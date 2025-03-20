@@ -13,4 +13,3 @@ export const connectDb = async () => {
         throw error
     }
 }
-//name, Email, mobileNo, address, lisenceNo, experience, commissionRate, status 

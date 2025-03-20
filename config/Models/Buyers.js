@@ -5,44 +5,44 @@ const { Schema, model } = mongoose;
 const BuyersSchema = new Schema({
     name: {
         type: String,
-        required: true,  // Ensure name field is required
+        required: true,
     },
     email: {
         type: String,
-        required: true,  // Ensure email field is required
-        unique: true,    // Ensure email is unique
-        lowercase: true, // Automatically convert to lowercase
-        trim: true,      // Remove any leading or trailing spaces
+        required: true,
+        unique: true,
+        lowercase: true,
+        trim: true,
     },
     mobileNo: {
         type: String,
-        required: true,  // Ensure mobileNo field is required
-        unique: true,    // Ensure mobileNo is unique
-        match: /^[0-9]{10}$/, // Ensure mobile number is 10 digits (you can adjust the regex as needed)
+        required: true,
+        unique: true,
+        match: /^[0-9]{10}$/,
     },
     address: {
         type: String,
-        required: true,  // Ensure address field is required
+        required: true,
     },
-    RoomNo: {
+    roomNo: {
         type: String,
-        required: true,  // Ensure RoomNo field is required
+        required: true,
     },
     status: {
         type: String,
-        enum: ['Active', 'Inactive'],  // Possible statuses for the buyer
-        default: 'Active',  // Default status is Active
+        enum: ['Active', 'Inactive'],
+        default: 'Active',
     },
     created_at: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Buyers',
+        type: Date,
+        default: Date.now,
     },
     updated_at: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Buyers',
+        type: Date,
+        default: Date.now,
     }
-}, { timestamps: true }); // Automatically adds createdAt and updatedAt fields
+}, { timestamps: true });
 
 const Buyers = model('Buyers', BuyersSchema);
 
-export default Buyers; // Export the model instead of the schema
+export default Buyers;

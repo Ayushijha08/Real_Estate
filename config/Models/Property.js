@@ -5,36 +5,36 @@ const { Schema, model } = mongoose;
 const PropertySchema = new Schema({
     propertyTitle: {
         type: String,
-        required: true, // Ensure property title is provided
+        required: true, 
     },
     propertyType: {
         type: String,
-        required: true, // Ensure property type is provided
-        enum: ['Residential', 'Commercial', 'Industrial'], // Example property types, you can adjust this as per requirements
+        required: true, 
+        enum: ['Residential', 'Commercial', 'Industrial'], 
     },
     address: {
         type: String,
-        required: true, // Ensure address is provided
+        required: true, 
     },
     price: {
         type: Number,
-        required: true, // Ensure price is provided
-        min: 0, // Price should not be negative
+        required: true, 
+               min: 0, 
     },
     areaSqft: {
         type: Number,
-        required: true, // Ensure area in square feet is provided
-        min: 0, // Area should be a positive number
+        required: true, 
+        min: 0, 
     },
     furnishing: {
         type: String,
-        enum: ['Fully Furnished', 'Semi Furnished', 'Unfurnished'], // You can adjust furnishing types as per needs
-        default: 'Unfurnished', // Default value if not provided
+        enum: ['Fully Furnished', 'Semi Furnished', 'Unfurnished'],
+        default: 'Unfurnished',
     },
     status: {
         type: String,
-        enum: ['Available', 'Sold', 'Rented'], // Property status options
-        default: 'Available', // Default status
+        enum: ['Available', 'Sold', 'Rented'],
+        default: 'Available', 
     },
     created_at: {
         type: mongoose.Schema.Types.ObjectId,
@@ -44,8 +44,8 @@ const PropertySchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Property',
     }
-}, { timestamps: true }); // Correct placement of timestamps
+}, { timestamps: true }); 
 
 const Property = model('Property', PropertySchema);
 
-export default Property; // Export the model instead of the schema
+export default Property;

@@ -5,52 +5,52 @@ const { Schema, model } = mongoose;
 const LeaseSchema = new Schema({
     name: {
         type: String,
-        required: true,  // Make name field required
+        required: true,
     },
     email: {
         type: String,
-        required: true,  // Make email field required
-        unique: true,    // Ensure email is unique
-        lowercase: true, // Automatically convert to lowercase
-        trim: true,      // Remove any leading or trailing spaces
+        required: true,
+        unique: true,
+        lowercase: true,
+        trim: true,
     },
     mobileNo: {
         type: String,
-        required: true,  // Make mobileNo field required
-        unique: true,    // Ensure mobileNo is unique
-        match: /^[0-9]{10}$/, // Ensure mobile number is 10 digits
+        required: true,
+        unique: true,
+        match: /^[0-9]{10}$/,
     },
     address: {
         type: String,
-        required: true,  // Make address field required
+        required: true,
     },
     LeaseStartDate: {
         type: Date,
-        required: true,  // Make LeaseStartDate field required
+        required: true,
     },
     LeaseEndDate: {
         type: Date,
-        required: true,  // Make LeaseEndDate field required
+        required: true,
     },
     MonthlyRent: {
         type: Number,
-        required: true,  // Make MonthlyRent field required
-        min: 0,          // Ensure MonthlyRent is a positive number
+        required: true,
+        min: 0,
     },
     SecurityDeposit: {
         type: Number,
-        required: true,  // Make SecurityDeposit field required
-        min: 0,          // Ensure SecurityDeposit is a positive number
+        required: true,
+        min: 0,
     },
     paymentStatus: {
         type: String,
-        enum: ['Pending', 'Completed', 'Overdue'], // Possible statuses for payment
-        default: 'Pending', // Default status is Pending
+        enum: ['Pending', 'Completed', 'Overdue'],
+        default: 'Pending',
     },
     LeaseStatus: {
         type: String,
-        enum: ['Active', 'Expired', 'Terminated'], // Possible statuses for lease
-        default: 'Active', // Default status is Active
+        enum: ['Active', 'Expired', 'Terminated'],
+        default: 'Active',
     },
     created_at: {
         type: mongoose.Schema.Types.ObjectId,
@@ -60,8 +60,8 @@ const LeaseSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Lease',
     }
-}, { timestamps: true }); // Automatically adds createdAt and updatedAt fields
+}, { timestamps: true });
 
 const Lease = model('Lease', LeaseSchema);
 
-export default Lease; // Export the model instead of the schema
+export default Lease;

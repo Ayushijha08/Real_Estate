@@ -10,15 +10,14 @@ const AgentSchema = new Schema({
     email: {
         type: String,
         required: true,
-        unique: true, // Ensures email is unique
+        unique: true, // Email should be unique
         lowercase: true,
         trim: true,
     },
     mobileNo: {
         type: String,
         required: true,
-        unique: true, // Ensures mobileNo is unique
-        //match: /^[0-9]{10}$/, // Validates for a 10-digit phone number (you can adjust based on requirements)
+        unique: true, 
     },
     address: {
         type: String,
@@ -27,21 +26,21 @@ const AgentSchema = new Schema({
     licenseNo: {
         type: String,
         required: true,
-        unique: true, // Ensures licenseNo is unique
+        unique: true, 
     },
     experience: {
         type: Number,
         required: true,
-        min: 0, // Ensures experience is a non-negative number
+        min: 0, 
     },
     commissionRate: {
         type: Number,
         required: true,
-        min: 0, // Ensures commissionRate is a non-negative number
+        min: 0, 
     },
     status: {
         type: String,
-        enum: ['active', 'inactive'], // Defines status values
+        enum: ['active', 'inactive'], 
         default: 'active',
     },
     created_at: {
@@ -52,7 +51,7 @@ const AgentSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Agent',
     }
-}, { timestamps: true }); // Correct placement of timestamps
+}, { timestamps: true }); 
 
 const Agents = model('Agent', AgentSchema);
 
