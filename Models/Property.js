@@ -36,14 +36,7 @@ const PropertySchema = new Schema({
         enum: ['Available', 'Sold', 'Rented'],
         default: 'Available', 
     },
-    created_at: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Property',
-    },
-    updated_at: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Property',
-    }
+   
 }, { timestamps: true }); 
 
 const Property = model('Property', PropertySchema);

@@ -1,5 +1,5 @@
 import express, { application } from 'express';
-import { createAgent, getAllAgents, getAgentById, updateAgent, deleteAgent } from "../controller/AgentController.js";
+import { createAgent, getAllAgents, getAgentById, updateAgent, deleteAgent } from "../controllers/AgentController.js";
 const router = express.Router();
 // import auth, { authorizeRole } from '../config/auth.js';
 

@@ -35,14 +35,7 @@ const FinanceSchema = new Schema({
         enum: ['Pending', 'Completed', 'Failed'],  
         default: 'Pending', 
     },
-    created_at: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Finance',
-    },
-    updated_at: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Finance',
-    }
+    
 }, { timestamps: true }); 
 
 const Finance = model('Finance', FinanceSchema);

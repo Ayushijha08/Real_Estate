@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const { Schema, model } = mongoose;
 
-const BuyersSchema = new Schema({
+const BookingSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -24,25 +24,32 @@ const BuyersSchema = new Schema({
         type: String,
         required: true,
     },
-    roomNo: {
-        type: String,
+    check_in_date: {
+        type: Date,
         required: true,
     },
-    status: {
+    check_out_date: {
+        type: Date,
+        required: true,
+    },
+    TotalAmountUnit: {
+        type: Number,
+        required: true,
+        min: 0,
+    },
+    paymentStatus: {
         type: String,
-        enum: ['Active', 'Inactive'],
-        default: 'Active',
+        enum: ['Pending', 'Completed', 'Failed'],
+        default: 'Pending',
     },
-    created_at: {
-        type: Date,
-        default: Date.now,
+    BookingStatus: {
+        type: String,
+        enum: ['Confirmed', 'Cancelled', 'Completed'],
+        default: 'Confirmed',
     },
-    updated_at: {
-        type: Date,
-        default: Date.now,
-    }
+    
 }, { timestamps: true });
 
-const Buyers = model('Buyers', BuyersSchema);
+const Booking = model('Booking', BookingSchema);
 
-export default Buyers;
+export default Booking;

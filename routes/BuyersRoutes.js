@@ -1,5 +1,5 @@
 import express, { application } from 'express';
-import { createBuyer, getAllBuyers, getBuyerById, updateBuyer, deleteBuyer } from "../controller/BuyerController.js";
+import { createBuyer, getAllBuyers, getBuyerById, updateBuyer, deleteBuyer } from "../controllers/BuyerController.js";
 const router = express.Router();
 // import auth, { authorizeRole } from '../config/auth.js';
 

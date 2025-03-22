@@ -52,14 +52,7 @@ const LeaseSchema = new Schema({
         enum: ['Active', 'Expired', 'Terminated'],
         default: 'Active',
     },
-    created_at: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Lease',
-    },
-    updated_at: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Lease',
-    }
+    
 }, { timestamps: true });
 
 const Lease = model('Lease', LeaseSchema);

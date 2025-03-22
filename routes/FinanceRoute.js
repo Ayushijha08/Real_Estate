@@ -1,5 +1,5 @@
 import express, { application } from 'express';
-import { createFinance, getAllFinances, getFinanceById, updateFinance, deleteFinance } from "../controller/FinanceController.js";
+import { createFinance, getAllFinances, getFinanceById, updateFinance, deleteFinance } from "../controllers/FinanceController.js";
 const router = express.Router();
 // import auth, { authorizeRole } from '../config/auth.js';
 

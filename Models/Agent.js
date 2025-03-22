@@ -43,14 +43,7 @@ const AgentSchema = new Schema({
         enum: ['active', 'inactive'], 
         default: 'active',
     },
-    created_at: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Agent',
-    },
-    updated_at: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Agent',
-    }
+    
 }, { timestamps: true }); 
 
 const Agents = model('Agent', AgentSchema);

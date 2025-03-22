@@ -1,5 +1,5 @@
 import express, { application } from 'express';
-import { createBooking, getAllBookings, getBookingById, updateBooking, deleteBooking } from "../controller/BookingController.js";
+import { createBooking, getAllBookings, getBookingById, updateBooking, deleteBooking } from "../controllers/BookingController.js";
 const router = express.Router();
 // import auth, { authorizeRole } from '../config/auth.js';
 
