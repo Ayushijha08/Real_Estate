@@ -1,4 +1,4 @@
-import booking from "../Models/Booking";
+import Booking from "../Models/Booking.js";
 
 export const createBooking = async (req, res) => {
     try {
@@ -7,7 +7,7 @@ export const createBooking = async (req, res) => {
             return res.status(400).json({ success: false, message: 'All fields are required!' });
         }
 
-        await booking.create({ name, Email, mobileNo, address, check_in_date, check_out_date, TotalAmountUnit, paymentStatus, Bookingstatus}) 
+        await Booking.create({ name, Email, mobileNo, address, check_in_date, check_out_date, TotalAmountUnit, paymentStatus, Bookingstatus}) 
         res.status(201).json({
             message: 'booking created successfully'
         });

@@ -1,4 +1,4 @@
-import Agent from "../models/Agent";
+import Agent from "../Models/Agent.js";
 
 export const createAgent = async (req, res) => {
     try {

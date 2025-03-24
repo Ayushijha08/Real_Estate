@@ -1,4 +1,4 @@
-import property from "../models/property";
+import Property from "../Models/Property.js";
 
 export const createProperty = async (req, res) => {
     try {
@@ -7,7 +7,7 @@ export const createProperty = async (req, res) => {
             return res.status(400).json({ success: false, message: 'All fields are required!' });
         }
 
-        await property.create({ propertyTitle, propertyType, address, price, areaSqft, furnishing, status}) 
+        await Property.create({ propertyTitle, propertyType, address, price, areaSqft, furnishing, status}) 
         res.status(201).json({
             message: 'property created successfully'
         });

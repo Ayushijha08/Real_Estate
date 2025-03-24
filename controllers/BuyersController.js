@@ -1,4 +1,4 @@
-import Buyer from "../Models/Buyer";
+import Buyers from "../Models/Buyers.js"
 
 export const createBuyer = async (req, res) => {
     try {
@@ -7,7 +7,7 @@ export const createBuyer = async (req, res) => {
             return res.status(400).json({ success: false, message: 'All fields are required!' });
         }
 
-        await Buyer.create({ name, Email, mobileNo, address, RoomNo, status}) 
+        await Buyers.create({ name, Email, mobileNo, address, RoomNo, status}) 
         res.status(201).json({
             message: 'Buyer created successfully'
         });

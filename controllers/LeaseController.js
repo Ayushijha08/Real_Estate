@@ -1,4 +1,4 @@
-import lease from "../Models/lease";
+import Lease from "../Models/Lease.js";
 
 export const createLease = async (req, res) => {
     try {
@@ -7,7 +7,7 @@ export const createLease = async (req, res) => {
             return res.status(400).json({ success: false, message: 'All fields are required!' });
         }
 
-        await lease.create({ name, Email, mobileNo, address, LeaseStartDate, LeaseEndDate, MonthlyRent, SecurityDeposit, paymentStatus, LeaseStatus}) 
+        await Lease.create({ name, Email, mobileNo, address, LeaseStartDate, LeaseEndDate, MonthlyRent, SecurityDeposit, paymentStatus, LeaseStatus}) 
         res.status(201).json({
             message: 'lease created successfully'
         });

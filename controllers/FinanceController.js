@@ -1,4 +1,4 @@
-import Finance from "../Models/Finance";
+import Finance from "../Models/Finance.js";
 
 export const createFinance = async (req, res) => {
     try {
